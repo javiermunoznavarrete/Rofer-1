@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rofer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <script type="text/javascript">
+      
+      $( document ).ready(
+      $("*").contents().each(function() {
+          if(this.nodeType == 3)
+              this.nodeValue = this.nodeValue.replace("Copyright © 2015 - 2019 Camaleon CMS.", "Copyright ©2019 Rofer");
+        })
+      )
+    </script>
+  </body>
+</html>
